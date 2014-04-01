@@ -6,7 +6,13 @@ gem 'rails', '4.0.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
+group :production do
+  # Use PostgreSQL as the database for Active Record
+  gem 'pg'
 
+  # 12 Factor App compatibility
+  gem 'rails_12factor'
+end
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -27,7 +33,21 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
 group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
 end
+
+# ActiveRecord Queries
+gem 'squeel'
+
+# Data Format
+gem 'msgpack'
+
+# Static Site Deployment 
+gem 'rails-zero', '~> 0.1.0'
+
+# Remote APIs
+gem 'cocoapods-core', github: 'dpree/Core' # rails 4 compatibility
+gem 'octokit'
