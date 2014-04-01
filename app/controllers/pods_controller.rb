@@ -11,7 +11,6 @@ class PodsController < ApplicationController
     respond_to do |format|
       format.mpac { render :text => MessagePack.dump(pods_index) }
       format.json { render json: pods_index }
-      format.html
     end
   end
 
@@ -21,7 +20,6 @@ class PodsController < ApplicationController
     respond_to do |format|
       format.mpac { render :text => MessagePack.dump(@pods.map(&:serializable_hash)) }
       format.json { render json: @pods }
-      format.html
     end
   end
 end
