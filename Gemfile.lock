@@ -49,10 +49,14 @@ GEM
       xpath (~> 2.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    faye-websocket (0.4.7)
+      eventmachine (>= 0.12.0)
     fuzzy_match (2.0.4)
     hike (1.2.3)
+    http_parser.rb (0.5.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -74,6 +78,10 @@ GEM
     octokit (3.0.0)
       sawyer (~> 0.5.3)
     pg (0.17.1)
+    poltergeist (1.1.0)
+      capybara (~> 2.0, >= 2.0.1)
+      faye-websocket (~> 0.4, >= 0.4.4)
+      http_parser.rb (~> 0.5.3)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.4)
@@ -159,6 +167,7 @@ DEPENDENCIES
   msgpack
   octokit
   pg
+  poltergeist
   rails (= 4.0.3)
   rails-zero (~> 0.1.0)
   rails_12factor

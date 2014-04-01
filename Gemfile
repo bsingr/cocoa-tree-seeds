@@ -47,6 +47,7 @@ gem 'msgpack'
 
 # Static Site Deployment 
 gem 'rails-zero', '~> 0.1.0'
+gem 'poltergeist'
 
 # Remote APIs
 gem 'cocoapods-core', github: 'dpree/Core' # rails 4 compatibility
