@@ -50,7 +50,7 @@ gem 'squeel'
 gem 'msgpack'
 
 # Static Site Deployment 
-gem 'rails-zero', '~> 0.1.0'
+gem 'rails-zero', '~> 0.2.0'
 gem 'poltergeist'
 
 # Remote APIs
