@@ -2,6 +2,7 @@ require 'rails_zero/drivers/poltergeist'
 
 RailsZero.configure do |c|
   c.backend.url = 'http://cocoa-tree-store.herokuapp.com' if Rails.env.production?
+  c.deployment.git_remote_ref = 'gh-pages'
   c.deployment.url = 'git@github.com:cocoa-tree/store.git'
 
   formats = %w[ json mpac ]
