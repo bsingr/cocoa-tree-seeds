@@ -1,6 +1,4 @@
 desc 'Update Specs folder'
 task :spec_submodule do
-	Dir.chdir('Specs') do
-		system 'git pull'
-	end
+	system 'git clone git@github.com:CocoaPods/Specs.git'
 end
