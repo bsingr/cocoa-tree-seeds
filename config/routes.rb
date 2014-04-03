@@ -1,4 +1,4 @@
-CocoaTreeStore::Application.routes.draw do
+CocoaTreeSeeds::Application.routes.draw do
   mount RailsZero::Engine => "/rails_zero"
   
   resources :pods, only: [:index, :show]

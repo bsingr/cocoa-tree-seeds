@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-CocoaTreeStore::Application.load_tasks
+CocoaTreeSeeds::Application.load_tasks

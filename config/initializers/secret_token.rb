@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-CocoaTreeStore::Application.config.secret_key_base = 'c02a2e415c3640a54b45f3f69e3514359017d1f41f4d613db1b17e22c468adc7a080f289b3171dd6ba81c611bab4d9d742981fe0ac53476293163385d12bf45e'
+CocoaTreeSeeds::Application.config.secret_key_base = 'c02a2e415c3640a54b45f3f69e3514359017d1f41f4d613db1b17e22c468adc7a080f289b3171dd6ba81c611bab4d9d742981fe0ac53476293163385d12bf45e'

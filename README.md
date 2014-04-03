@@ -1,7 +1,7 @@
 # Cocoa Tree Seeds
 
-[![Build Status](https://travis-ci.org/dpree/cocoa-tree-store.png)](https://travis-ci.org/dpree/cocoa-tree-store)
-[![Code Climate](https://codeclimate.com/github/dpree/cocoa-tree-store.png)](https://codeclimate.com/github/dpree/cocoa-tree-store)
+[![Build Status](https://travis-ci.org/dpree/cocoa-tree-seeds.png)](https://travis-ci.org/dpree/cocoa-tree-seeds)
+[![Code Climate](https://codeclimate.com/github/dpree/cocoa-tree-seeds.png)](https://codeclimate.com/github/dpree/cocoa-tree-seeds)
 
 This project provides data for [cocoa-tree.github.io](http://cocoa-tree.github.io). Data is automatically collected and processed every 24 hours and pushed to [github.com/cocoa-tree/seeds](http://github.com/cocoa-tree/seeds).
 
