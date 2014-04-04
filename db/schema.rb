@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140221213253) do
+ActiveRecord::Schema.define(version: 20140404170902) do
+
+  create_table "cocoa_pod_categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cocoa_pod_dependencies", force: true do |t|
     t.integer  "cocoa_pod_id"
