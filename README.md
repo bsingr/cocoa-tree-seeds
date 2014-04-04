@@ -7,6 +7,12 @@ This project provides data for [cocoa-tree.github.io](http://cocoa-tree.github.i
 
 The CocoaPods [Specs](http://github.com/cocoa-pods/Spec) repository acts as the main data source. For each CocoaPod hosted on GitHub additional information (e.g. about project activity) is fetched using the GitHub API.
 
+## Deployment
+
+**Heroku**
+
+    heroku config:set BUILDPACK_URL=heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
+
 ## License
 
 This project uses [MIT-LICENSE](LICENSE.txt).
