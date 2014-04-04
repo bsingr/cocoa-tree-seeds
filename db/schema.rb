@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404170902) do
+ActiveRecord::Schema.define(version: 20140404171749) do
 
   create_table "cocoa_pod_categories", force: true do |t|
     t.string   "name"
@@ -30,18 +30,7 @@ ActiveRecord::Schema.define(version: 20140404170902) do
   add_index "cocoa_pod_dependencies", ["cocoa_pod_id"], name: "index_cocoa_pod_dependencies_on_cocoa_pod_id"
   add_index "cocoa_pod_dependencies", ["dependent_cocoa_pod_id"], name: "index_cocoa_pod_dependencies_on_dependent_cocoa_pod_id"
 
-  create_table "cocoa_pods", force: true do |t|
-    t.string   "name"
-    t.string   "website_url"
-    t.string   "doc_url"
-    t.string   "source_url"
-    t.integer  "stars"
-    t.datetime "pushed_at"
-    t.string   "version"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "summary"
-    t.string   "category"
-  end
+# Could not dump table "cocoa_pods" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end

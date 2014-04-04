@@ -1,6 +1,7 @@
 class CocoaPod < ActiveRecord::Base
   default_scope { order('stars DESC') }
 
+  belongs_to :cocoa_pod_category
   has_many :cocoa_pod_dependencies, foreign_key: :dependent_cocoa_pod_id
   has_many :dependent_cocoa_pods, foreign_key: :cocoa_pod_id,
                                   class_name: 'CocoaPodDependency'
