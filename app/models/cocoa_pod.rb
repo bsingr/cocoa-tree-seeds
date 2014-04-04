@@ -11,6 +11,9 @@ class CocoaPod < ActiveRecord::Base
                           foreign_key: :dependent_cocoa_pod_id
   
   after_initialize :init_stars
+
+  validates_uniqueness_of :name
+  validates_presence_of :name
   
   def init_stars
     self.stars ||= 0

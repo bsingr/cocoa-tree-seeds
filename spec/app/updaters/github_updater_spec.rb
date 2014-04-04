@@ -3,11 +3,12 @@ require 'spec_helper'
 describe GithubUpdater do
   subject(:updater) { described_class.new }
   let('cocoa_pod') do
-    CocoaPod.new source_url: 'https://github.com/dpree/cocoatree.git'
+    CocoaPod.new source_url: 'https://github.com/dpree/cocoa-tree.git',
+                 name: 'cocoa-tree'
   end
   
   it 'calls Octokit.repository' do
-    Octokit.should_receive('repository').with('dpree/cocoatree')
+    Octokit.should_receive('repository').with('dpree/cocoa-tree')
     subject.update cocoa_pod
   end
   
