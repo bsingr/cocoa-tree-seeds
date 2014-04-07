@@ -1,6 +1,6 @@
 class UpdateCocoaPodCategoryJob
   def run
-    categories = CocoaPodYAMLCategories.new
+    categories = CocoaPodCategories.new
     CocoaPod.all.find_each do |cocoa_pod|
       if category_name = categories[cocoa_pod.name]
         category = cocoa_pod.cocoa_pod_category
