@@ -15,7 +15,7 @@ private
     @data ||= begin
       c = Curl::Easy.new(URL)
       c.follow_location = true
-      c.ssl_verify_peer = false
+      c.ssl_version = 3
       c.perform
       JSON.parse(c.body_str)
     end
