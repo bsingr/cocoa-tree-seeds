@@ -13,7 +13,15 @@ namespace :jobs do
   task :github => :environment do
     UpdateCocoaPodFromGithubJob.new.run
   end
+  
+  desc 'Sync Category'
+  task :category => :environment do
+    UpdateCocoaPodCategoryJob.new.run
+  end
 end
 
 desc 'All Jobs'
-task :jobs => ['jobs:spec', 'jobs:dependency', 'jobs:github']
+task :jobs => ['jobs:spec',
+               'jobs:dependency',
+               'jobs:github',
+               'jobs:category']
