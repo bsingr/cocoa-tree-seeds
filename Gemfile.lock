@@ -47,6 +47,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    curb (0.8.5)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     eventmachine (1.0.3)
@@ -57,9 +58,6 @@ GEM
     fuzzy_match (2.0.4)
     hike (1.2.3)
     http_parser.rb (0.5.3)
-    httparty (0.13.0)
-      json (~> 1.8)
-      multi_xml (>= 0.5.2)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -74,7 +72,6 @@ GEM
     minitest (4.7.5)
     msgpack (0.5.8)
     multi_json (1.9.2)
-    multi_xml (0.5.5)
     multipart-post (2.0.0)
     nap (0.6.0)
     nokogiri (1.6.1)
@@ -167,7 +164,7 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods-core!
-  httparty
+  curb
   jbuilder (~> 1.2)
   msgpack
   octokit

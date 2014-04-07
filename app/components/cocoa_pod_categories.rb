@@ -13,8 +13,10 @@ private
 
   def data
     @data ||= begin
-      response = HTTParty.get(URL)
-      JSON.parse(response.body)
+      c = Curl::Easy.new(URL)
+      c.follow_location = true
+      c.perform
+      JSON.parse(c.body_str)
     end
   end
 end

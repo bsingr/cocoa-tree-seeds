@@ -57,4 +57,4 @@ gem 'poltergeist'
 # Remote APIs
 gem 'cocoapods-core', github: 'dpree/Core' # rails 4 compatibility
 gem 'octokit'
-gem 'httparty'
+gem 'curb'
