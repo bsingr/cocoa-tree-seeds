@@ -6,7 +6,8 @@ class CocoaPodCategoryUpdater
   end
 
   def update cocoa_pod
-    if category_name = categories[cocoa_pod.name]
+    category_name = categories[cocoa_pod.name]
+    if category_name.present?
       category = cocoa_pod.cocoa_pod_category
       if !category || category.name != category_name
         Rails.logger.info "Assigning category #{category_name} to #{cocoa_pod.name}"
