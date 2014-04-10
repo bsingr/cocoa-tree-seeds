@@ -20,6 +20,10 @@ describe CocoaPodCategoriesDump do
   it 'dumps file' do
     path = root_path('tmp', 'rspec-CocoaPodCategoriesDump.json')
     subject.dump(path)
-    JSON.load(path).should == {}
+    JSON.parse(File.read(path)).should == {
+      "example-pod" => "",
+      "another-pod" => "",
+      "another-other-pod" => ""
+    }
   end
 end

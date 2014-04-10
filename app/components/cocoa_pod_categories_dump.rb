@@ -23,7 +23,7 @@ class CocoaPodCategoriesDump
       data = build_data
       data.each_with_index do |value, index|
         sep = index < data.length-1 ? ',' : ''
-        f.puts "  \"#{value[:name]}\": \"#{value[:category]}\"#{sep} # #{value[:comment]}"
+        f.puts "  \"#{value[:name]}\": \"#{value[:category]}\"#{sep} // #{value[:comment]}"
       end
       f.puts '}'
     end
