@@ -1,4 +1,10 @@
 class CocoaPodCategoryUpdater
+  attr_reader :categories
+
+  def initialize categories=CocoaPodCategories.new
+    @categories = categories
+  end
+
   def update cocoa_pod
     if category_name = categories[cocoa_pod.name]
       category = cocoa_pod.cocoa_pod_category
@@ -9,9 +15,5 @@ class CocoaPodCategoryUpdater
         cocoa_pod.save
       end
     end
-  end
-
-  def categories
-    @categories ||= CocoaPodCategories.new
   end
 end
