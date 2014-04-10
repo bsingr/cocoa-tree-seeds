@@ -17,15 +17,15 @@ class CocoaPodCategoriesDump
     data
   end
 
-  def dump path
-    File.open(path, 'w') do |f|
-      f.puts '{'
-      data = build_data
-      data.each_with_index do |value, index|
-        sep = index < data.length-1 ? ',' : ''
-        f.puts "  \"#{value[:name]}\": \"#{value[:category]}\"#{sep} // #{value[:comment]}"
-      end
-      f.puts '}'
+  def json
+    str = ''
+    str << "{\n"
+    data = build_data
+    data.each_with_index do |value, index|
+      sep = index < data.length-1 ? ',' : ''
+      str << "  \"#{value[:name]}\": \"#{value[:category]}\"#{sep} // #{value[:comment]}\n"
     end
+    str << "}\n"
+    str
   end
 end

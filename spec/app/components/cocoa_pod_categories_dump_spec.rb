@@ -22,9 +22,7 @@ describe CocoaPodCategoriesDump do
   end
 
   it 'dumps file with comments' do
-    path = root_path('tmp', 'rspec-CocoaPodCategoriesDump.json')
-    subject.dump(path)
-    content = File.read(path)
+    content = subject.json
     content.should include('This is the example.')
     content.should include('This is another one.')
     JSON.parse(content).should == {
