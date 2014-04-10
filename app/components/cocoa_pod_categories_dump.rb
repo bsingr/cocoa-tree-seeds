@@ -7,7 +7,7 @@ class CocoaPodCategoriesDump
 
   def build_data
     data = []
-    CocoaPod.find_each do |cocoa_pod|
+    CocoaPod.order('name ASC').each do |cocoa_pod|
       data << {
         name: cocoa_pod.name,
         category: cocoa_pod.try(:cocoa_pod_category).try(:name) || '',

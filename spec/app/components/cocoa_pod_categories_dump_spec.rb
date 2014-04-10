@@ -16,19 +16,28 @@ describe CocoaPodCategoriesDump do
   end
 
   its(:build_data) do
-    should == [{:name => "example-pod", :category=>"example-category", :comment=>"This is the example."},
-               {:name => "another-pod", :category=>"other-category", :comment=>"This is another one."},
-               {:name => "another-other-pod", :category=>"", :comment=>""}]
+    should == [{:name => "another-other-pod",
+                :category=>"",
+                :comment=>""},
+               {:name => "another-pod",
+                :category=>"other-category",
+                :comment=>"This is another one."},
+               {:name => "example-pod",
+                :category=>"example-category",
+                :comment=>"This is the example."}]
   end
 
   it 'dumps file with comments' do
     content = subject.json
     content.should include('This is the example.')
     content.should include('This is another one.')
-    JSON.parse(content).should == {
-      "example-pod" => "example-category",
-      "another-pod" => "other-category",
-      "another-other-pod" => ""
-    }
+    content.should == \
+%q{{
+  "another-other-pod": "", // 
+  "another-pod": "other-category", // This is another one.
+  "example-pod": "example-category" // This is the example.
+}
+}
+    JSON.parse(content).should be_kind_of(Hash)
   end
 end
