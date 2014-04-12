@@ -1,4 +1,4 @@
-class CocoaPodsCategoriesDump
+class CocoaPodsCategoriesExport
   attr_reader :categories
 
   def initialize categories=CocoaPodCategories.new
