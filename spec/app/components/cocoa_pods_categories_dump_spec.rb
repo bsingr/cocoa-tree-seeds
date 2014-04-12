@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CocoaPodCategoriesDump do
+describe CocoaPodsCategoriesDump do
   let('categories') { double('categories') }
   subject(:dump) { described_class.new(categories) }
   before do
