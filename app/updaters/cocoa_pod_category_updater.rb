@@ -1,12 +1,12 @@
 class CocoaPodCategoryUpdater
-  attr_reader :categories
+  attr_reader :categories_import
 
-  def initialize categories=CocoaPodCategories.new
-    @categories = categories
+  def initialize categories_import=CocoaPodsCategoriesImport.new
+    @categories_import = categories_import
   end
 
   def update cocoa_pod
-    category_name = categories[cocoa_pod.name]
+    category_name = categories_import[cocoa_pod.name]
     if category_name.present?
       category = cocoa_pod.cocoa_pod_category
       if !category || category.name != category_name

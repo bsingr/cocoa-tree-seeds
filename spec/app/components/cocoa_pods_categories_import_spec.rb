@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CocoaPodCategories do
+describe CocoaPodsCategoriesImport do
   it 'returns nil for undefined cocoa pod' do
     subject['foo'].should == nil
   end

@@ -1,4 +1,4 @@
-class CocoaPodCategories
+class CocoaPodsCategoriesImport
   URL = 'https://github.com/cocoa-tree/branches/raw/master/cocoa_pods_categories.json'
 
   def [] key
