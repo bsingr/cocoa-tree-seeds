@@ -1,10 +1,4 @@
 class CocoaPodsCategoriesExport
-  attr_reader :categories
-
-  def initialize categories=CocoaPodCategories.new
-    @categories = categories
-  end
-
   def build_data
     data = []
     CocoaPod.order('name ASC').each do |cocoa_pod|

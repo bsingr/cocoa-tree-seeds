@@ -1,8 +1,7 @@
 require 'spec_helper'
 
 describe CocoaPodsCategoriesExport do
-  let('categories') { double('categories') }
-  subject { described_class.new(categories) }
+  subject { described_class.new }
   before do
     a = CocoaPod.create name: 'example-pod',
                         summary: 'This is the example.'
