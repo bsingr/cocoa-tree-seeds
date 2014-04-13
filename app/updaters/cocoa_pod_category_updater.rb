@@ -9,12 +9,24 @@ class CocoaPodCategoryUpdater
     category_name = categories_import[cocoa_pod.name]
     if category_name.present?
       category = cocoa_pod.cocoa_pod_category
-      if !category || category.name != category_name
-        Rails.logger.info "Assigning category #{category_name} to #{cocoa_pod.name}"
-        new_category = CocoaPodCategory.find_or_create_by_name(category_name)
-        cocoa_pod.cocoa_pod_category = new_category
-        cocoa_pod.save
+      if category
+        if category.name == category_name
+          Rails.logger.info "Keeping #{cocoa_pod.name} in #{category_name}"
+        else
+          Rails.logger.info "Moving #{cocoa_pod.name} to #{category_name} "\
+                            "(from #{category.name})"
+          move cocoa_pod, category_name
+        end
+      else
+        Rails.logger.info "Moving #{cocoa_pod.name} to #{category_name}"
+        move cocoa_pod, category_name
       end
     end
+  end
+
+  def move cocoa_pod, category_name
+    new_category = CocoaPodCategory.find_or_create_by_name(category_name)
+    cocoa_pod.cocoa_pod_category = new_category
+    cocoa_pod.save
   end
 end
