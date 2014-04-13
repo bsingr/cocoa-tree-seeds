@@ -4,7 +4,7 @@ class CocoaPodsCategoriesExport
     CocoaPod.order('name ASC').each do |cocoa_pod|
       data << {
         name: cocoa_pod.name,
-        category: cocoa_pod.cocoa_pod_category.try(:name) || '',
+        category: cocoa_pod.cocoa_pod_category.try(:name) || 'uncategorized',
         comment: cocoa_pod.try(:summary).try(:gsub, "\n", " ") || ''
       }
     end

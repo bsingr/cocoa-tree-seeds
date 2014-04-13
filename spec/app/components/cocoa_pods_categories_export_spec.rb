@@ -16,7 +16,7 @@ describe CocoaPodsCategoriesExport do
 
   its(:build_data) do
     should == [{:name => "another-other-pod",
-                :category=>"",
+                :category=>"uncategorized",
                 :comment=>""},
                {:name => "another-pod",
                 :category=>"other-category",
@@ -32,7 +32,7 @@ describe CocoaPodsCategoriesExport do
     content.should include('This is another one. With multiline summary')
     content.should == \
 %q{{
-  "another-other-pod": "", // 
+  "another-other-pod": "uncategorized", // 
   "another-pod": "other-category", // This is another one. With multiline summary
   "example-pod": "example-category" // This is the example.
 }
