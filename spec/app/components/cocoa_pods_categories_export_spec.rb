@@ -1,13 +1,12 @@
 require 'spec_helper'
 
-describe CocoaPodCategoriesDump do
-  let('categories') { double('categories') }
-  subject(:dump) { described_class.new(categories) }
+describe CocoaPodsCategoriesExport do
+  subject { described_class.new }
   before do
     a = CocoaPod.create name: 'example-pod',
                         summary: 'This is the example.'
     b = CocoaPod.create name: 'another-pod',
-                        summary: 'This is another one.'
+                        summary: "This is another one.\nWith multiline summary"
     CocoaPod.create name: 'another-other-pod'
     a.build_cocoa_pod_category name: 'example-category'
     a.save
@@ -17,11 +16,11 @@ describe CocoaPodCategoriesDump do
 
   its(:build_data) do
     should == [{:name => "another-other-pod",
-                :category=>"",
+                :category=>"uncategorized",
                 :comment=>""},
                {:name => "another-pod",
                 :category=>"other-category",
-                :comment=>"This is another one."},
+                :comment=>"This is another one. With multiline summary"},  
                {:name => "example-pod",
                 :category=>"example-category",
                 :comment=>"This is the example."}]
@@ -30,11 +29,11 @@ describe CocoaPodCategoriesDump do
   it 'dumps file with comments' do
     content = subject.json
     content.should include('This is the example.')
-    content.should include('This is another one.')
+    content.should include('This is another one. With multiline summary')
     content.should == \
 %q{{
-  "another-other-pod": "", // 
-  "another-pod": "other-category", // This is another one.
+  "another-other-pod": "uncategorized", // 
+  "another-pod": "other-category", // This is another one. With multiline summary
   "example-pod": "example-category" // This is the example.
 }
 }

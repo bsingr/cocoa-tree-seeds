@@ -32,7 +32,7 @@ class CocoaPod < ActiveRecord::Base
       'doc_url' => doc_url,
       'version' => version,
       'summary' => summary || "",
-      'category' => cocoa_pod_category.try(:name) || "",
+      'category' => cocoa_pod_category.try(:name) || "uncategorized",
       'dependencies' => cocoa_pod_dependencies.map{|d| {'id' => d.cocoa_pod.id,
                                                         'name' => d.cocoa_pod.name,
                                                         'requirement' => d.requirement }},

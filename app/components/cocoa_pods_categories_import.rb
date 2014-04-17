@@ -1,5 +1,5 @@
-class CocoaPodCategories
-  URL = 'https://github.com/cocoa-tree/branches/raw/branches/cocoa_pods_categories.json'
+class CocoaPodsCategoriesImport
+  URL = 'https://github.com/cocoa-tree/branches/raw/master/cocoa_pods_categories.json'
 
   def [] key
     if data.has_key?(key)

@@ -1,5 +1,5 @@
 class CocoaPodsCategoriesController < ApplicationController
   def index
-    render json: CocoaPodCategoriesDump.new.json
+    render json: CocoaPodsCategoriesExport.new.json
   end
 end
