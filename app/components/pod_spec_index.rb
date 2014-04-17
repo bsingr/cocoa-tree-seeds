@@ -13,7 +13,9 @@ class PodSpecIndex
     if spec_set = source.set(name)
       spec_set.specification
     end
-  rescue ::Pod::DSLError => e
+  rescue ::Pod::DSLError,
+         ::Pod::Informative => e
+    Rails.logger.error e
     nil
   end
   
