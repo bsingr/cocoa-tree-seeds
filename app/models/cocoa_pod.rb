@@ -21,7 +21,6 @@ class CocoaPod < ActiveRecord::Base
   end
   
   def serializable_hash context=nil
-    h = super
     {
       'id' => id,
       'name' => name,
