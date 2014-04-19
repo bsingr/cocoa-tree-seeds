@@ -8,6 +8,7 @@ RailsZero.configure do |c|
   formats = %w[ json mpac ]
   formats.each do |format|
     c.site.add_path "/pods.#{format}"
+    c.site.add_path "/categories.#{format}"
   end
   c.site.paths_builders = [->{
     chunk_size = PodsController::CHUNK_SIZE
