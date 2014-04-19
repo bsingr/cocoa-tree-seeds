@@ -2,6 +2,7 @@ CocoaTreeSeeds::Application.routes.draw do
   mount RailsZero::Engine => "/rails_zero"
   
   resources :pods, only: [:index, :show]
+  resources :categories, only: [:index]
   resources :cocoa_pods_categories, only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.
