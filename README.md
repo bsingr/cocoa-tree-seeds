@@ -20,4 +20,4 @@ For phantomjs buildpack:
 
 ## License
 
-This project uses [MIT-LICENSE](LICENSE.txt).
+Copyright © 2013 - 2014 Jens Bissinger. This project uses [MIT-LICENSE](LICENSE.txt).
