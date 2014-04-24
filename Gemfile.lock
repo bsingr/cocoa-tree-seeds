@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/dpree/Core.git
+  remote: git://github.com/bsingr/Core.git
   revision: deb51eb6bc8f11a687e039a03e4790b6644aff71
   specs:
     cocoapods-core (0.29.0)

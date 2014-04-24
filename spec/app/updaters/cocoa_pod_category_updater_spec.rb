@@ -4,7 +4,7 @@ describe CocoaPodCategoryUpdater do
   let('categories_import') { double('categories_import') }
   subject(:updater) { described_class.new(categories_import) }
   let('cocoa_pod') do
-    CocoaPod.new source_url: 'https://github.com/dpree/cocoa-tree.git',
+    CocoaPod.new source_url: 'https://github.com/bsingr/cocoa-tree.git',
                  name: 'cocoa-tree'
   end
   

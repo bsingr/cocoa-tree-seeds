@@ -55,6 +55,6 @@ gem 'rails-zero', '~> 0.2.0'
 gem 'poltergeist'
 
 # Remote APIs
-gem 'cocoapods-core', github: 'dpree/Core' # rails 4 compatibility
+gem 'cocoapods-core', github: 'bsingr/Core' # rails 4 compatibility
 gem 'octokit'
 gem 'curb'
