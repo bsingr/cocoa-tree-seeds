@@ -4,17 +4,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
-group :development, :test do
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
 
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
-
-end
 
 group :production do
-  # Use PostgreSQL as the database for Active Record
-  gem 'pg'
-
   # 12 Factor App compatibility
   gem 'rails_12factor'
 end
@@ -40,8 +34,10 @@ end
 # gem 'debugger', group: [:development, :test]
 
 group :test do
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
+  gem 'rspec-rails', '~> 2.14'
+  gem 'shoulda-matchers', '~> 2.5'
+  gem 'test-unit'
+  gem 'rspec-its'
 end
 
 # ActiveRecord Queries
@@ -50,11 +46,11 @@ gem 'squeel'
 # Data Format
 gem 'msgpack'
 
-# Static Site Deployment 
+# Static Site Deployment
 gem 'rails-zero', '~> 0.2.0'
 gem 'poltergeist'
 
 # Remote APIs
 gem 'cocoapods-core', github: 'bsingr/Core' # rails 4 compatibility
 gem 'octokit'
-gem 'curb'
+gem 'http'

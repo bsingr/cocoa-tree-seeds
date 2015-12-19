@@ -13,11 +13,8 @@ private
 
   def data
     @data ||= begin
-      c = Curl::Easy.new(URL)
-      c.follow_location = true
-      c.ssl_version = 3
-      c.perform
-      JSON.parse(c.body_str)
+      res = HTTP.get(URL, follow: true)
+      JSON.parse(res.body)
     end
   end
 end
