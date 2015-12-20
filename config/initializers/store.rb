@@ -18,7 +18,7 @@ def reload_store
     end
   end
 
-  file = PStore.new("db/#{Rails.env}.pstore")
+  file = PStore.new(LOCAL_FILE)
   file.transaction do
     file.roots.each { |k| DB[k] = file[k] }
   end
@@ -27,8 +27,9 @@ end
 reload_store
 
 at_exit do
-  DB_FILE.transaction do
-    DB.each { |k,v| DB_FILE[k] = v }
+  file = PStore.new(LOCAL_FILE)
+  file.transaction do
+    DB.each { |k,v| file[k] = v }
   end
 
   if DROPBOX_TOKEN
