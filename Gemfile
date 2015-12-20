@@ -49,4 +49,3 @@ gem 'poltergeist'
 gem 'cocoapods-core', github: 'bsingr/Core' # rails 4 compatibility
 gem 'octokit'
 gem 'http'
-gem 'dropbox-sdk'
