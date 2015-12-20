@@ -1,7 +1,7 @@
 class CocoaPodCategory
   include Persistence
-  include ActiveModel::Model
-  include ActiveModel::Serialization
+  include ::ActiveModel::Model
+  include ::ActiveModel::Serialization
 
   attr_accessor :name,
                 :cocoa_pods

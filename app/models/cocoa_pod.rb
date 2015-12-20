@@ -1,7 +1,7 @@
 class CocoaPod
   include Persistence
-  include ActiveModel::Model
-  include ActiveModel::Serialization
+  include ::ActiveModel::Model
+  include ::ActiveModel::Serialization
 
   validates_presence_of :name
 
