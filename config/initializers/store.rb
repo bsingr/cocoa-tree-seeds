@@ -1,8 +1,8 @@
 require 'dropbox_sdk'
 
 DROPBOX_TOKEN = ENV['DROPBOX_TOKEN']
-LOCAL_FILE = 'db/production.pstore'
-REMOTE_FILE = '/production.pstore'
+LOCAL_FILE = "db/#{Rails.env}.pstore"
+REMOTE_FILE = "/#{Rails.env}.pstore"
 if DROPBOX_TOKEN
   client = DropboxClient.new(DROPBOX_TOKEN)
   puts "linked account:", client.account_info().inspect
