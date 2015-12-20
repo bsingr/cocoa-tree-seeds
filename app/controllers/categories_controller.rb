@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   def index
     categories = CocoaPodCategory.all.to_a
     respond_to do |format|
-      format.mpac { render :text => MessagePack.dump(categories.map(&:serializable_hash)) }
+      format.mpac { render :text => MessagePack.dump(categories.map(&:last).map(&:serializable_hash)) }
       format.json { render json: categories }
     end
   end
