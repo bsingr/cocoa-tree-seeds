@@ -16,9 +16,9 @@ class PodsController < ApplicationController
 
   def show
     data = CocoaPod.all.to_a.each_slice(CHUNK_SIZE).to_a
-    @pods = data[params[:id].to_i]
+    @pods = data[params[:id].to_i].map(&:last).map(&:serializable_hash)
     respond_to do |format|
-      format.mpac { render :text => MessagePack.dump(@pods.map(&:last).map(&:serializable_hash)) }
+      format.mpac { render :text => MessagePack.dump(@pods) }
       format.json { render json: @pods }
     end
   end
