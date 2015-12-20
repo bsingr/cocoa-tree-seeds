@@ -7,6 +7,7 @@ class CocoaPod
 
   attr_accessor :name,
                 :category_name,
+                :updated_at,
                 :stars,
                 :pushed_at,
                 :website_url,
@@ -37,6 +38,10 @@ class CocoaPod
     @category_name || 'uncategorized'
   end
 
+  def updated_at
+    @updated_at || Time.now
+  end
+
   def serializable_hash context=nil
     {
       'name' => name,
@@ -48,10 +53,8 @@ class CocoaPod
       'version' => version,
       'summary' => summary || "",
       'category_name' => category_name,
-      'dependencies' => dependencies.map{|d| {'name' => d.name,
-                                              'requirement' => d.requirement }},
-      'dependents' => dependents.map{|d| {'name' => d.name,
-                                          'requirement' => d.requirement }}
+      'dependencies' => dependencies,
+      'dependents' => dependents
     }
   end
 
@@ -62,13 +65,9 @@ class CocoaPod
   def self.delete_all_dependencies
     h = DB[collection_name] || {}
     h.each do |k,v|
-      v.dependencies = []
-      v.dependents = []
-      h[v.name] = v.serializable_hash
+      v['dependencies'] = []
+      v['dependents'] = []
     end
-    DB.transaction do
-      DB[collection_name] ||= {}
-      DB[collection_name]
-    end
+    DB[collection_name] ||= {}
   end
 end
