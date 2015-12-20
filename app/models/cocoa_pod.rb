@@ -46,7 +46,7 @@ class CocoaPod
     {
       'name' => name,
       'stars' => stars,
-      'pushed_at' => pushed_at.try(:iso8601).to_s,
+      'pushed_at' => pushed_at.to_s,
       'website_url' => website_url,
       'source_url' => source_url,
       'doc_url' => doc_url,
