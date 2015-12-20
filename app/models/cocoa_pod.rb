@@ -39,7 +39,7 @@ class CocoaPod
   end
 
   def updated_at
-    @updated_at || Time.now
+    @updated_at || Time.now - 1.year
   end
 
   def serializable_hash context=nil
