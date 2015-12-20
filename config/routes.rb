@@ -1,6 +1,8 @@
 CocoaTreeSeeds::Application.routes.draw do
   mount RailsZero::Engine => "/rails_zero"
-  
+
+  get 'reload' => 'stores#reload'
+
   resources :pods, only: [:index, :show]
   resources :categories, only: [:index]
   resources :cocoa_pods_categories, only: [:index]

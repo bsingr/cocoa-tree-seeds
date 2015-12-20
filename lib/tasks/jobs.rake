@@ -8,12 +8,12 @@ namespace :jobs do
   task :dependency => :environment do
     UpdateCocoaPodDependencyFromPodSpecJob.new.run
   end
-  
+
   desc 'Sync Github'
   task :github => :environment do
     UpdateCocoaPodFromGithubJob.new.run
   end
-  
+
   desc 'Sync Category'
   task :category => :environment do
     UpdateCocoaPodCategoryJob.new.run
