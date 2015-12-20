@@ -4,6 +4,7 @@ module Persistence
   extend ActiveSupport::Concern
 
   def save!
+    self.updated_at = Time.now
     if collection_name = self.class.collection_name
       DB[collection_name] ||= {}
       DB[collection_name][name] = serializable_hash
