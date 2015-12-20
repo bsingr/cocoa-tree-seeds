@@ -5,8 +5,8 @@ class PodsController < ApplicationController
 
   def index
     @pods = CocoaPod.all.to_a
-    pods_index = CocoaPod.all.to_a.each_slice(CHUNK_SIZE).each_with_index.map do |pods, index|
-      [index, pods.map(&:name)]
+    pods_index = @pods.each_slice(CHUNK_SIZE).each_with_index.map do |pods, index|
+      [index, pods.map(&:first)]
     end
     respond_to do |format|
       format.mpac { render :text => MessagePack.dump(pods_index) }
