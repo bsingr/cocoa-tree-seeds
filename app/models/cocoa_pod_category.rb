@@ -1,13 +1,25 @@
-class CocoaPodCategory < ActiveRecord::Base
-  has_many :cocoa_pods
-  
-  validates_uniqueness_of :name
+class CocoaPodCategory
+  include Persistence
+  include ActiveModel::Model
+  include ActiveModel::Serialization
+
+  attr_accessor :name,
+                :cocoa_pods
+
   validates_presence_of :name
+
+  def cocoa_pods
+    @cocoa_pods || []
+  end
 
   def serializable_hash context=nil
     {
       'name' => name,
-      'cocoa_pods_count' => cocoa_pods.count
+      'cocoa_pods' => cocoa_pods
     }
+  end
+
+  def self.collection_name
+    :categories
   end
 end

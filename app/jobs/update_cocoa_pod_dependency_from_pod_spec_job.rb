@@ -1,6 +1,6 @@
 class UpdateCocoaPodDependencyFromPodSpecJob
   def run
-    CocoaPodDependency.delete_all
+    CocoaPod.delete_all_dependencies
     pod_spec_updater = PodSpecDependencyUpdater.new
     pod_spec_decorator = PodSpecDecorator.new
     pod_spec_index = PodSpecIndex.new

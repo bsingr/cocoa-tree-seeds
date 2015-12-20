@@ -1,17 +1,16 @@
 require 'spec_helper'
 
 describe CocoaPodsCategoriesExport do
+  before { CocoaPod.delete_all }
   subject { described_class.new }
   before do
     a = CocoaPod.create name: 'example-pod',
+                        category_name: 'example-category',
                         summary: 'This is the example.'
     b = CocoaPod.create name: 'another-pod',
+                        category_name: 'other-category',
                         summary: "This is another one.\nWith multiline summary"
     CocoaPod.create name: 'another-other-pod'
-    a.build_cocoa_pod_category name: 'example-category'
-    a.save
-    b.build_cocoa_pod_category name: 'other-category'
-    b.save
   end
 
   its(:build_data) do
@@ -20,7 +19,7 @@ describe CocoaPodsCategoriesExport do
                 :comment=>""},
                {:name => "another-pod",
                 :category=>"other-category",
-                :comment=>"This is another one. With multiline summary"},  
+                :comment=>"This is another one. With multiline summary"},
                {:name => "example-pod",
                 :category=>"example-category",
                 :comment=>"This is the example."}]

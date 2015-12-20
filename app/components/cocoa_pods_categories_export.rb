@@ -1,10 +1,10 @@
 class CocoaPodsCategoriesExport
   def build_data
     data = []
-    CocoaPod.order('name ASC').each do |cocoa_pod|
+    CocoaPod.all.sort.each do |k, cocoa_pod|
       data << {
         name: cocoa_pod.name,
-        category: cocoa_pod.cocoa_pod_category.try(:name) || 'uncategorized',
+        category: cocoa_pod.category_name,
         comment: cocoa_pod.try(:summary).try(:gsub, "\n", " ") || ''
       }
     end

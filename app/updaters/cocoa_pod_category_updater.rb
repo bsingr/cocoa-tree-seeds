@@ -25,8 +25,10 @@ class CocoaPodCategoryUpdater
   end
 
   def move cocoa_pod, category_name
-    new_category = CocoaPodCategory.find_or_create_by_name(category_name)
-    cocoa_pod.cocoa_pod_category = new_category
-    cocoa_pod.save
+    cocoa_pod.category_name = category_name
+    cocoa_pod.save!
+    category = CocoaPodCategory.find(category_name) || CocoaPodCategory.new(name: category_name)
+    category.cocoa_pods << cocoa_pod.name
+    category.save!
   end
 end

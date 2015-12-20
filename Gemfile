@@ -1,12 +1,11 @@
-ruby '2.1.7'
+ruby '2.2.1'
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
+# gem 'sqlite3'
 
 group :production do
   # 12 Factor App compatibility
@@ -35,13 +34,9 @@ end
 
 group :test do
   gem 'rspec-rails', '~> 2.14'
-  gem 'shoulda-matchers', '~> 2.5'
   gem 'test-unit'
   gem 'rspec-its'
 end
-
-# ActiveRecord Queries
-gem 'squeel'
 
 # Data Format
 gem 'msgpack'

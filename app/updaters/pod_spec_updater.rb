@@ -1,6 +1,6 @@
 class PodSpecUpdater
   def update pod_spec
-    cocoa_pod = CocoaPod.find_by name: pod_spec.name
+    cocoa_pod = CocoaPod.find pod_spec.name
     unless cocoa_pod
       cocoa_pod = CocoaPod.new name: pod_spec.name
     end
